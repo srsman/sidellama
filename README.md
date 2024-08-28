@@ -8,7 +8,7 @@ tiny browser-augmented chat client for open-source language models.
 
 ### install from chrome web store
 
-coming soon!
+[Add sidellama to chrome](https://chromewebstore.google.com/detail/sidellama/lcgkoaonfgonjamccahahodpkdkfhijo)
 
 ### install manually
 
