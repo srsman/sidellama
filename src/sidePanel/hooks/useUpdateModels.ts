@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 import { useConfig } from '../ConfigContext';
-import { GEMINI_URL, GROQ_URL } from '../constants';
+import { GEMINI_URL, GROQ_URL, OPENAI_URL } from '../constants';
 import { useInterval } from '@chakra-ui/react';
 
 const fetchDataSilently = async (url: string, params = {}) => {
@@ -49,6 +49,16 @@ export const useUpdateModels = () => {
           updateConfig({ groqConnected: false });
         } else {
           const parsedModels = groqModels?.data.map((m: any) => ({ ...m, host: 'groq' })) || [];
+          models = [...models, ...parsedModels];
+        }
+      }
+
+      if (config?.openAiApiKey) {
+        const openAiModels = await fetchDataSilently(OPENAI_URL, { headers: { Authorization: `Bearer ${config?.openAiApiKey}` } });
+        if (!openAiModels) {
+          updateConfig({ openAiConnected: false });
+        } else {
+          const parsedModels = openAiModels?.data.filter((m: any) => m.id.startsWith('gpt-')).map((m: any) => ({ ...m, host: 'openai' })) || [];
           models = [...models, ...parsedModels];
         }
       }

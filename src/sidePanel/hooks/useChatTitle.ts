@@ -21,7 +21,8 @@ export const useChatTitle = (isLoading, messages, message) => {
       const url = {
         groq: 'https://api.groq.com/openai/v1/chat/completions',
         ollama: `${config?.ollamaUrl}/api/chat`,
-        gemini: ''
+        gemini: '',
+        openai: 'https://api.openai.com/v1/chat/completions'
       }[currentModel?.host || ''];
 
       fetchDataAsStream(
@@ -36,7 +37,7 @@ export const useChatTitle = (isLoading, messages, message) => {
         (part: string) => {
           if (part) setChatTitle(part.replace('"', '').replace('"', '').replace('# ', '').trim());
         },
-        { Authorization: `Bearer ${config?.groqApiKey}` },
+        { Authorization: `Bearer ${config?.openAiApiKey}` },
         currentModel?.host
       );
     }
