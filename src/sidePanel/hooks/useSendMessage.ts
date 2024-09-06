@@ -69,7 +69,15 @@ const useSendMessage = (
       ollama: `${config?.ollamaUrl}/api/chat`,
       gemini: '',
       lmStudio: `${config?.lmStudioUrl}/v1/chat/completions`,
+      openai: 'https://api.openai.com/v1/chat/completions',
     }[currentModel?.host || ''];
+
+    let authHeader;
+    if (currentModel?.host === 'groq') {
+      authHeader = { Authorization: `Bearer ${config?.groqApiKey}` };
+    } else if (currentModel?.host === 'openai') {
+      authHeader = { Authorization: `Bearer ${config?.openAiApiKey}` };
+    }
 
     fetchDataAsStream(
       url,
@@ -89,7 +97,7 @@ const useSendMessage = (
           setResponse(part || '');
         }
       },
-      { Authorization: `Bearer ${config?.groqApiKey}` },
+      authHeader,
       currentModel?.host
     );
   };
