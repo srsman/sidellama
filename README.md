@@ -54,6 +54,7 @@ tiny browser-augmented chat client for open-source language models.
 - 使用`加载已解压的扩展程序`按钮加载 `dist/chrome` 文件夹
 ## Docs 文档
 Check out the [documentation page](/DOCS.md)
+
 ![](/docs/20250417141008.png)
 ![](/docs/20250417141041.png)
 
