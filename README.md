@@ -31,8 +31,6 @@ tiny browser-augmented chat client for open-source language models.
 - 提升整体用户体验
 
 ## Installation 安装
-
-
 ### Install Manually 手动安装
 
 - download the latest [release](https://github.com/srsman/sidellama/releases)
@@ -54,14 +52,8 @@ tiny browser-augmented chat client for open-source language models.
 - 运行 `npm i && npm start` 生成位于 `dist/chrome` 的打包文件
 - 启用 Chrome 的`扩展程序 > 开发者模式`
 - 使用`加载已解压的扩展程序`按钮加载 `dist/chrome` 文件夹
-
 ## Docs 文档
-
 Check out the [documentation page](/DOCS.md)
+![](/docs/20250417141008.png)
+![](/docs/20250417141041.png)
 
-
-![](/docs/sidellama_app.png)
-
-![](/docs/vim.png)
-
-![](/docs/yt.png)
