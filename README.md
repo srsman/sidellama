@@ -26,15 +26,6 @@ tiny browser-augmented chat client for open-source language models.
 ## docs
 
 Check out the [documentation page](/DOCS.md)
-
-## community
-
-Check out the [discord community](https://discord.gg/2pFtRgqp)
-
-## support 💚
-
-Check out [sidellama @ ko-fi](https://ko-fi.com/sidellama)
-
 ![](/docs/sidellama_app.png)
 
 ![](/docs/vim.png)
@@ -59,10 +50,4 @@ Once configured, you can use Gemini for AI tasks by selecting it from the provid
 
 ## Star History
 
-<a href="https://star-history.com/#gyopak/sidellama&Date">
- <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=gyopak/sidellama&type=Date&theme=dark" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=gyopak/sidellama&type=Date" />
-   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=gyopak/sidellama&type=Date" />
- </picture>
-</a>
+[![Star History Chart](https://api.star-history.com/svg?repos=https:/&type=Date)](https://www.star-history.com/#https:/&Date)
