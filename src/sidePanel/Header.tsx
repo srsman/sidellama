@@ -225,6 +225,8 @@ export const Header = ({
 
   const visibleTitle = chatTitle && !settingsMode && !historyMode;
 
+  const noActiveConnection = !(config?.geminiConnected || config?.ollamaConnected || config?.groqConnected || config?.lmStudioConnected || config?.openAiConnected);
+
   return (
     <Box
       background="var(--active)"
@@ -240,7 +242,7 @@ export const Header = ({
         justifyContent="space-between"
         pb={2}
       >
-        {(!config?.models || config?.models.length === 0) && !settingsMode && (
+        {noActiveConnection && !settingsMode && (
           <WelcomeModal isOpen={!settingsMode} setSettingsMode={setSettingsMode} onClose={() => {}} />
         )}
         <Box alignItems="center" display="flex" flexGrow={1} overflow="hidden" width="80%">

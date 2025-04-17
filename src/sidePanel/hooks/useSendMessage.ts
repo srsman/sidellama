@@ -67,7 +67,7 @@ const useSendMessage = (
     const url = {
       groq: 'https://api.groq.com/openai/v1/chat/completions',
       ollama: `${config?.ollamaUrl}/api/chat`,
-      gemini: '',
+      gemini: `https://generativelanguage.googleapis.com/v1beta/${config?.selectedModel}:streamGenerateContent`,
       lmStudio: `${config?.lmStudioUrl}/v1/chat/completions`,
       openai: 'https://api.openai.com/v1/chat/completions',
     }[currentModel?.host || ''];
@@ -77,11 +77,25 @@ const useSendMessage = (
       authHeader = { Authorization: `Bearer ${config?.groqApiKey}` };
     } else if (currentModel?.host === 'openai') {
       authHeader = { Authorization: `Bearer ${config?.openAiApiKey}` };
+    } else if (currentModel?.host === 'gemini') {
+      // Gemini uses API key in the URL query parameter, handled later
+      authHeader = {}; // No separate auth header needed for Gemini via URL key
     }
 
+    // Append API key and SSE parameter for Gemini URL
+    const finalUrl = currentModel?.host === 'gemini' ? `${url}?key=${config?.geminiApiKey}&alt=sse` : url;
+
     fetchDataAsStream(
-      url,
-      {
+      finalUrl,
+      // Conditionally construct the body based on the host
+      currentModel?.host === 'gemini' ? {
+        // Gemini payload structure (without stream)
+        contents: currentMessages.map((msg, index) => ({
+          role: msg.role === 'assistant' ? 'model' : 'user',
+          parts: [{ text: (index === 0 && msg.role === 'user') ? `${content}\n\n${msg.content}` : msg.content }]
+        }))
+      } : {
+        // Payload structure for other models (including stream)
         ...configBody,
         model: config?.selectedModel,
         messages: [
