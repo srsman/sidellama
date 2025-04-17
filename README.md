@@ -33,13 +33,29 @@ Check out the [discord community](https://discord.gg/2pFtRgqp)
 
 ## support 💚
 
-Check out [sidellama @ ko-fi](https://ko-fi.com/sidellama) 
+Check out [sidellama @ ko-fi](https://ko-fi.com/sidellama)
 
 ![](/docs/sidellama_app.png)
 
 ![](/docs/vim.png)
 
 ![](/docs/yt.png)
+
+## Gemini Support
+
+We now support Gemini as an AI provider. Please refer to the documentation for configuration and usage instructions.
+
+### Configuration
+
+To configure Gemini as your AI provider, follow these steps:
+
+1. Navigate to the `ConfigGemini.tsx` file in the `src/sidePanel` directory.
+2. Set your Gemini API key in the configuration settings.
+3. Adjust any additional settings as needed for your application.
+
+### Usage
+
+Once configured, you can use Gemini for AI tasks by selecting it from the provider options in the application interface.
 
 ## Star History
 
