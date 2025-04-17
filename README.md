@@ -35,11 +35,11 @@ tiny browser-augmented chat client for open-source language models.
 
 ### Install Manually 手动安装
 
-- download the latest [release](https://github.com/gyopak/sidellama/releases)
+- download the latest [release](https://github.com/srsman/sidellama/releases)
 - enable chrome `Extensions > Developer mode`
 - load the content of the extracted zip with `Load unpacked` button
 
-- 下载最新的[发布版本]([https://github.com/gyopak/sidellama/releases](https://github.com/srsman/sidellama/releases))
+- 下载最新的[发布版本](https://github.com/srsman/sidellama/releases)
 - 启用 Chrome 的`扩展程序 > 开发者模式`
 - 使用`加载已解压的扩展程序`按钮加载解压后的文件
 
