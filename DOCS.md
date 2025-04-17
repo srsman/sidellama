@@ -1,63 +1,61 @@
 # sidellama
 
-## connections 
+## connections 连接
 
 ![](/docs/connections.png)
 
 ### ollama
 
-- [install ollama](https://ollama.com/download)
-- or install it with `curl -fsSL https://ollama.com/install.sh | sh`
+- [install ollama](https://ollama.com/download) [安装 ollama]
+- 或者使用命令行安装：`curl -fsSL https://ollama.com/install.sh | sh`
 
 ```
-# select a model from https://ollama.com/library
+# 从 https://ollama.com/library 选择一个模型
 ollama pull phi3
 
-# start the daemon
+# 启动服务
 ollama serve
 ```
 
 ### LM Studio
 
-- [install LM Studio](https://lmstudio.ai/)
-- download a model from the home screen, or use the search tab to pull from huggingface
-- go to `Local server` tab, hit `Start server`, and select your downloaded model
+- [install LM Studio](https://lmstudio.ai/) [安装 LM Studio]
+- 从主页下载模型，或使用搜索标签从 huggingface 获取
+- 转到 `Local server` 标签页，点击 `Start server`，然后选择你下载的模型
 
 ### groq
 
-Groq offers a wide variety of models with a generous free tier.
-- [Website](https://groq.com/)
-- [Create an API key](https://console.groq.com/keys)
+Groq 提供多种模型，并有慷慨的免费额度。
+- [官网](https://groq.com/)
+- [创建 API 密钥](https://console.groq.com/keys)
 
-
-## persona
+## persona 个性化助手
 
 ![](/docs/persona.png)
 
-Create and modify your own personal assistants!
+创建和修改你自己的个性化助手！
 
-Check out these collections for inspiration:
+查看这些集合以获取灵感：
 - [0xeb/TheBigPromptLibrary](https://github.com/0xeb/TheBigPromptLibrary)
 - [sockcymbal/persona_library](https://github.com/sockcymbal/enhanced-llm-reasoning-tree-of-thoughts/blob/main/persona_library.md)
 - [abilzerian/LLM-Prompt-Library](https://github.com/abilzerian/LLM-Prompt-Library)
 - [kaushikb11/awesome-llm-agents](https://github.com/kaushikb11/awesome-llm-agents)
 
-## page context
+## page context 页面上下文
 
 ![](/docs/pageContext.png)
 
-Augment your conversation with the content of your (currently visited) web page.
+使用当前访问的网页内容来增强你的对话。
 
-- select `text mode` to share the text content of your page
-- select `html mode` to share the source code of the site (resource intensive, 
-only for development purposes) 
-- adjust `char limit` to control the maximum amount of characters you want to share in your conversation. decrease this amount if you have limited context window.
+- 选择 `text mode` 来分享页面的文本内容
+- 选择 `html mode` 来分享网站的源代码（资源密集型，仅用于开发目的）
+- 调整 `char limit` 来控制你想在对话中分享的最大字符数。如果你的上下文窗口有限，请减少这个数值。
 
-## web search
+## web search 网络搜索
 
 ![](/docs/webSearch.png)
 
-Basic web-augmentation for your chats. Enter your web search query, and sidellama will load up an async web search to answer your questions based on live public data.
+为你的聊天提供基本的网络增强功能。输入你的网络搜索查询，sidellama 将加载异步网络搜索，基于实时公共数据回答你的问题。
 
-- you can choose `duckduckgo` or `brave` as your web source
-- adjust `char limit` to control the maximum amount of characters you want to share in your conversation. decrease this amount if you have limited context window.
+- 你可以选择 `duckduckgo` 或 `brave` 作为你的网络数据源
+- 调整 `char limit` 来控制你想在对话中分享的最大字符数。如果你的上下文窗口有限，请减少这个数值。
