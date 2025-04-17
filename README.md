@@ -48,6 +48,3 @@ To configure Gemini as your AI provider, follow these steps:
 
 Once configured, you can use Gemini for AI tasks by selecting it from the provider options in the application interface.
 
-## Star History
-
-[![Star History Chart](https://api.star-history.com/svg?repos=https:/&type=Date)](https://www.star-history.com/#https:/&Date)
